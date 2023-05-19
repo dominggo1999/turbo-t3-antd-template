@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
 export const formatDate = (timestampString: string): string => {
   const date = new Date(timestampString);
   const year = date.getFullYear();

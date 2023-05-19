@@ -14,23 +14,17 @@ interface HeadlessProps {
 
 class HeadlessDocument extends Document<HeadlessProps> {
   get helmetHtmlAttrComponents() {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return this.props.helmet.htmlAttributes.toComponent();
   }
 
   get helmetBodyAttrComponents() {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return this.props.helmet.bodyAttributes.toComponent();
   }
 
   get helmetHeadComponents() {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return (
-      Object.keys(this.props.helmet)
-        .filter((el) => el !== "htmlAttributes" && el !== "bodyAttributes")
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        .map((el) => this.props.helmet[el].toComponent())
-    );
+    return Object.keys(this.props.helmet)
+      .filter((el) => el !== "htmlAttributes" && el !== "bodyAttributes")
+      .map((el) => this.props.helmet[el].toComponent());
   }
 
   render(): JSX.Element {
