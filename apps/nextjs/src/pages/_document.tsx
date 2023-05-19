@@ -99,6 +99,7 @@ HeadlessDocument.getInitialProps = async (ctx) => {
         <style
           id="jss-server-side"
           key="jss-server-side"
+          // rome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
           dangerouslySetInnerHTML={{ __html: css }}
         />
       </>
